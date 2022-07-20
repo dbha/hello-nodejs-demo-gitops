@@ -20,7 +20,7 @@ spec:
         carto.run/workload-name: hello-nodejs-gitops
     spec:
       containers:
-      - image: ghcr.io/dbha/tap/supply-chain/hello-nodejs-gitops-demo@sha256:d6d1b43eb4b9f16d2a4fdefd5f3247b30c6e5d7d2b23dd4709d9730ec56bb0cf
+      - image: ghcr.io/dbha/tap/supply-chain/hello-nodejs-gitops-demo@sha256:3da0f863a6996ffbd4f0e142a916ff2fc0fcd53555818d376dcd56231e8c6169
         name: workload
         resources: {}
         securityContext:

@@ -1,0 +1,29 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello-nodejs-gitops
+  labels:
+    app.kubernetes.io/part-of: hello
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: hello-nodejs-gitops
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.apps.tanzu.vmware.com/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: hello
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: hello-nodejs-gitops
+    spec:
+      containers:
+      - image: ghcr.io/dbha/tap/supply-chain/hello-nodejs-gitops-demo@sha256:d6d1b43eb4b9f16d2a4fdefd5f3247b30c6e5d7d2b23dd4709d9730ec56bb0cf
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+

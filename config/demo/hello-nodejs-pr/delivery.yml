@@ -20,7 +20,7 @@ spec:
         carto.run/workload-name: hello-nodejs-pr
     spec:
       containers:
-      - image: ghcr.io/dbha/tap/supply-chain/hello-nodejs-pr-demo@sha256:258c8c31dc6af2ce3c61a7ef481fc4df5ab536661f8b33ce0e75c5d1d999d617
+      - image: ghcr.io/dbha/tap/supply-chain/hello-nodejs-pr-demo@sha256:bef47a5fa744ce10fef87bc15b0339c36cee36873afcc00d4e2890d822403d6b
         name: workload
         resources: {}
         securityContext:
